@@ -1,0 +1,34 @@
+#nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #007042;
+  color: white;
+  padding: 10px;
+}
+
+#infoText {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#btnSelect {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#btnSelect :nth-child(1) {
+  margin-right: 10px;
+}

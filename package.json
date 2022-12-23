@@ -1,0 +1,34 @@
+{
+  "name": "stopupsapi",
+  "version": "2.4.5",
+  "description": "StopupsAPI Service Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "pm2-runtime start ecosystem.config.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.2.0",
+    "body-parser": "^1.20.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.1.1",
+    "cryptojs": "^2.5.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "memorystore": "^1.6.7",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^2.3.3",
+    "request": "^2.88.2",
+    "sequelize": "^6.25.6",
+    "sequelize-cli": "^6.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
