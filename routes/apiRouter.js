@@ -4,11 +4,12 @@ let url = require("url"); // url 사용
 const { Op } = require("sequelize");
 const router = express.Router(); // 익스프레스의 라우터 불러오기
 const CryptoJS = require("crypto-js"); // CryptoJs 사용
+require("dotenv").config();
 
 // 복호화 설정 값
-const keySize = 256; // 키 사이즈
-const iterations = 100; // 반복 횟수
-const secret = "0123456789"; // 비밀키
+const keySize = process.env.KEYSIZE; // 키 사이즈
+const iterations = process.env.ITERATIONS; // 반복 횟수
+const secret = process.env.SECRET; // 비밀키
 
 // 복호화
 function decrypt(transitmessage) {
