@@ -2,8 +2,8 @@ const express = require("express"); // 익스프레스 라이브러리 사용
 const path = require("path"); // 경로 라이브러리 사용
 const app = express(); // 익스프레스 사용
 const { sequelize } = require("./models"); // DB 모델 및 sequelize 사용
-const usersRouter = require("./routes/users"); // users.js 유저라우터 저장
-const usersUpdateRouter = require("./routes/usersUpdate"); // users.js 유저라우터 저장
+const usersRouter = require("./routes/users/users"); // users.js 유저라우터 저장
+const usersUpdateRouter = require("./routes/users/usersUpdate"); // users.js 유저라우터 저장
 const apiRouter = require("./routes/apiRouter"); // apiRouter 저장
 const mCreateRouter = require("./routes/menu/mCreateRouter"); // 메뉴 생성 라우팅
 const mAlterRouter = require("./routes/menu/mAlterRouter"); // 메뉴 수정 라우팅
@@ -16,7 +16,7 @@ const nAlterRouter = require("./routes/notice/nAlterRouter"); // 공지사항 �
 const nDeleteRouter = require("./routes/notice/nDeleteRouter"); // 공지사항 삭제 라우팅
 const smsAuthFunc = require("./routes/sms/smsAuthFunc"); // sms 인증 기능 라우팅
 const adminAuth = require("./routes/adminAuth"); // AdminAuth 인증 기능 라우팅
-
+const userDeleteRouter = require("./routes/users/userDelete");
 // HTTPS 테스트 소스 시작
 const https = require("https");
 const fs = require("fs");
@@ -60,7 +60,7 @@ app.use("/notice", nAlterRouter); // 공지사항 수정
 app.use("/notice", nDeleteRouter); // 공지사항 삭제
 app.use("/sms", smsAuthFunc); // SMS 인증
 app.use("/adminAuth", adminAuth); // adminAuth 인증
-
+app.use("/users", userDeleteRouter);
 // 개발 환경에서만 에러 표출
 app.use((err, req, res, next) => {
   res.locals.message = err.message;

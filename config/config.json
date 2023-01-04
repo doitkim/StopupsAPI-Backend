@@ -3,8 +3,8 @@
     "username": "stopupsapi",
     "password": "stopupsapi",
     "database": "stopupsapi",
-    "host": "192.168.10.63",
-    "port": "8306",
+    "host": "172.20.0.3",
+    "port": "3306",
     "dialect": "mysql"
   },
   "test": {
