@@ -17,7 +17,6 @@ const nDeleteRouter = require("./routes/notice/nDeleteRouter"); // 공지사항 
 const smsAuthFunc = require("./routes/sms/smsAuthFunc"); // sms 인증 기능 라우팅
 const adminAuth = require("./routes/adminAuth"); // AdminAuth 인증 기능 라우팅
 const userDeleteRouter = require("./routes/users/userDelete");
-// HTTPS 테스트 소스 시작
 const https = require("https");
 const fs = require("fs");
 
@@ -28,7 +27,7 @@ const sslOptions = {
   key: fs.readFileSync("./cert/www.stopupsapi.shop_202301038EDE1.key.pem"),
   cert: fs.readFileSync("./cert/www.stopupsapi.shop_202301038EDE1.crt.pem"),
 };
-// HTTPS 테스트 소스 끝
+
 
 const cors = require("cors"); // CORS 문제 해결 위해 사용
 // 모든 출처에서 오는 요청을 신뢰하도록 설정
@@ -82,7 +81,6 @@ sequelize
     // console.error(err); 에러 메시지를 보여주지 않기위해 주석 닮
   });
 
-// HTTPS
 https
   .createServer(sslOptions, app, (req, res) => {})
   .listen(app.get("port"), () => {
