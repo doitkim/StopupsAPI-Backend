@@ -8,7 +8,6 @@ router
 
   // 공지사항 삭제
   .post(async (req, res, next) => {
-    console.log(req);
     try {
       await Notice.destroy({
         where: { Id: req.body.WriteId },

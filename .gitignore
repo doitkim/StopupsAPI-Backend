@@ -1,3 +1,5 @@
 /cert
 /node_modules
 .env
+/config
+./ecosystem.config.js

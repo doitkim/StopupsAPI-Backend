@@ -4,7 +4,6 @@ const router = express.Router(); // 익스프레스의 라우터 불러오기
 
 router.route("/delete").post(async (req, res, next) => {
   try {
-    console.log(req.body);
     await User.destroy({
       where: { userToken: req.body.userToken },
     });

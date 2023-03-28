@@ -88,7 +88,7 @@ function send_message(phone, rnd_number) {
           ],
         },
       }).then(() => {
-        console.log("인증 번호 전송 성공");
+        console.log("관리자 번호 전송 성공");
         setTimeout(() => {
           AdminAuth.destroy({
             where: { adminToken: rndAuthAdminCord },

@@ -8,18 +8,15 @@ router
   .route("/delete")
   // 사이트 이미지 삭제
   .post(async (req, res, next) => {
-    const path = req.body.delImageUrl;
-    console.log(path);
     try {
       await EventList.destroy({
         where: { EventId: req.body.EventId },
       }).then(
         Object.values(path).map((e) => {
-          console.log(e);
           if (e !== null) {
             if (fs.existsSync("public" + e)) {
               fs.rm("public" + e, (err) => {
-                console.log(err);
+                console.error(err);
               });
             }
           }

@@ -17,7 +17,6 @@ router
   // /user/ POST 요청 오면 유저 테이블에 유저 추가
   .post(async (req, res, next) => {
     try {
-      // console.log(req.body);
       const user = await User.create({
         userToken: req.body.eAccessToken,
         userId: req.body.eUserId,

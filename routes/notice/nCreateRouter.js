@@ -22,7 +22,6 @@ router
   .route("/create")
   // 공지사항 등록
   .post(async (req, res, next) => {
-    console.log(req.body);
     try {
       await Notice.create({
         Date: req.body.writeDate,

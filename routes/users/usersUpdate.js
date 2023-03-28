@@ -7,7 +7,6 @@ router
   // /user/ get 요청 오면 유저 테이블 전체 조회 후 JSON 형식으로 응답
   .route("/update")
   .post(async (req, res, next) => {
-    // console.log(req.body);
     try {
       const user = await User.update(
         {
@@ -24,7 +23,7 @@ router
       );
       res.status(201).json(user); // 유저 추가 후 JSON 갱신
     } catch (err) {
-      // console.error(err);
+      console.error(err);
       next(err);
     }
   });

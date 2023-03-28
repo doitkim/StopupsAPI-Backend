@@ -82,16 +82,9 @@ sequelize
     // console.error(err); 에러 메시지를 보여주지 않기위해 주석 닮
   });
 
-// HTTPS 테스트 시작
+// HTTPS
 https
-  .createServer(sslOptions, app, (req, res) => {
-    console.log(req);
-  })
+  .createServer(sslOptions, app, (req, res) => {})
   .listen(app.get("port"), () => {
     console.log(app.get("port"), "번 포트에서 대기 중");
   });
-// HTTPS 테스트 끝
-
-// app.listen(app.get("port"), () => {
-//   console.log(app.get("port"), "번 포트에서 대기 중");
-// });
